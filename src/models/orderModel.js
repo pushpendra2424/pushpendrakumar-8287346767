@@ -5,7 +5,10 @@ const orderSchema = new mongoose.Schema( {
     productId: ObjectId,
     amount: Number,
     isFreeAppUser: Boolean,
-    date: String
+    date: {
+        type: Date,
+        default: Date.now()
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('MwOrder', orderSchema) //order
